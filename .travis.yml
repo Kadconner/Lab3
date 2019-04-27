@@ -2,9 +2,8 @@
 # т.к. в образе предустановлен clang-format версии 7.
 dist: xenial
 language: cpp
-install: make get-deps
 compiler:
-	-clang
-	-gcc
+	- clang
+	- gcc
 script:
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code
